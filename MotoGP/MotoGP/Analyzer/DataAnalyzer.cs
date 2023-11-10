@@ -25,7 +25,7 @@ public class DataAnalyzer : IDataAnalyzer
     public async Task AnalyzeData()
     {
         logger.LogInformation("Analyzing the seasons.json data...");
-        var path = Path.Join(settings.LocalCache.Directory.LocalPath, "seasons.json");
+        var path = Path.Join(settings.LocalCache.Directory.LocalPath, "objects/seasons.json");
         Season[] seasons = await reader.Read<Season[]>(path);
 
         var categoryTypes = new HashSet<string>();

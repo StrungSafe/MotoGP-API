@@ -6,5 +6,11 @@ namespace MotoGP.WebApi.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
+        [HttpGet]
+        public Task TempGet()
+        {
+            // an example for testing swagger docs
+            return Task.CompletedTask;
+        }
     }
 }
