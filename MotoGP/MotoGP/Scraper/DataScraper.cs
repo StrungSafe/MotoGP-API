@@ -13,12 +13,12 @@ public class DataScraper : IDataScraper
 
     private readonly ILogger<DataScraper> logger;
 
-    private readonly MachineLearning settings;
+    private readonly Repository settings;
 
     private readonly IDataWriter writer;
 
     public DataScraper(ILogger<DataScraper> logger, IDataLoader loader, IDataWriter writer,
-        IOptions<MachineLearning> settings)
+        IOptions<Repository> settings)
     {
         this.logger = logger;
         this.loader = loader;
@@ -42,7 +42,7 @@ public class DataScraper : IDataScraper
                                                        .Select(c => c.Circuit)
                                                        .Select((value, index) => new { Index = index, Value = value })
                                                        .ToDictionary(item => item.Index, item => item.Value);
-        string path = Path.Join(settings.Objects.LocalPath, "circuits.json");
+        string path = Path.Join(settings.LocalCache.Directory.LocalPath, "circuits.json");
         await writer.Write(path, circuits, token);
     }
 
@@ -55,13 +55,13 @@ public class DataScraper : IDataScraper
                                                .Select(c => c.Rider.FullName)
                                                .Select((value, index) => new { Index = index, Value = value })
                                                .ToDictionary(item => item.Index, item => item.Value);
-        string path = Path.Join(settings.Objects.LocalPath, "riders.json");
+        string path = Path.Join(settings.LocalCache.Directory.LocalPath, "riders.json");
         await writer.Write(path, riders, token);
     }
 
     private Task WriteSeasons(IEnumerable<Season> seasons, CancellationToken token)
     {
-        string path = Path.Join(settings.Objects.LocalPath, "seasons.json");
+        string path = Path.Join(settings.LocalCache.Directory.LocalPath, "seasons.json");
         return writer.Write(path, seasons, token);
     }
 }

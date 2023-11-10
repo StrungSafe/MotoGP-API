@@ -9,13 +9,13 @@ namespace MotoGP.Analyzer;
 
 public class DataAnalyzer : IDataAnalyzer
 {
-    private readonly MachineLearning settings;
+    private readonly Repository settings;
 
     private readonly ILogger<DataAnalyzer> logger;
 
     private readonly IDataReader reader;
 
-    public DataAnalyzer(ILogger<DataAnalyzer> logger, IOptions<MachineLearning> settings, IDataReader reader)
+    public DataAnalyzer(ILogger<DataAnalyzer> logger, IOptions<Repository> settings, IDataReader reader)
     {
         this.logger = logger;
         this.settings = settings.Value;
@@ -25,7 +25,7 @@ public class DataAnalyzer : IDataAnalyzer
     public async Task AnalyzeData()
     {
         logger.LogInformation("Analyzing the seasons.json data...");
-        var path = Path.Join(settings.Objects.LocalPath, "seasons.json");
+        var path = Path.Join(settings.LocalCache.Directory.LocalPath, "seasons.json");
         Season[] seasons = await reader.Read<Season[]>(path);
 
         var categoryTypes = new HashSet<string>();
