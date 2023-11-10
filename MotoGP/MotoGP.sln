@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MotoGP.Console", "MotoGP.Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotoGP", "MotoGP\MotoGP.csproj", "{BC4CB6BB-1020-430A-A7C8-8A194826C587}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotoGP.WebApi", "MotoGP.WebApi\MotoGP.WebApi.csproj", "{7923F23A-4AE9-4D07-9977-F46A78A5D54D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{BC4CB6BB-1020-430A-A7C8-8A194826C587}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC4CB6BB-1020-430A-A7C8-8A194826C587}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC4CB6BB-1020-430A-A7C8-8A194826C587}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7923F23A-4AE9-4D07-9977-F46A78A5D54D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7923F23A-4AE9-4D07-9977-F46A78A5D54D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7923F23A-4AE9-4D07-9977-F46A78A5D54D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7923F23A-4AE9-4D07-9977-F46A78A5D54D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
