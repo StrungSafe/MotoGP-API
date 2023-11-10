@@ -1,4 +1,4 @@
-﻿namespace MotoGP;
+﻿namespace MotoGP.Http;
 
 public class ThrottlingDelegatingHandler : DelegatingHandler
 {

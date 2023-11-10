@@ -1,8 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
 using MotoGP.Analyzer;
 using MotoGP.Scraper;
+using System;
 
-namespace MotoGP
+namespace MotoGP.Console
 {
     public class MotoGpHost
     {
@@ -28,11 +29,11 @@ namespace MotoGP
             {
                 try
                 {
-                    Console.WriteLine("Enter a # and enter to start a service");
-                    Console.WriteLine("0. Exit");
-                    Console.WriteLine("1. Scraper");
-                    Console.WriteLine("2. Analyzer");
-                    input = Console.ReadLine();
+                    System.Console.WriteLine("Enter a # and enter to start a service");
+                    System.Console.WriteLine("0. Exit");
+                    System.Console.WriteLine("1. Scraper");
+                    System.Console.WriteLine("2. Analyzer");
+                    input = System.Console.ReadLine();
                     if (int.TryParse(input, out service))
                     {
                         switch (service)
@@ -51,8 +52,8 @@ namespace MotoGP
                     service = -1;
                     logger.LogError(ex, "There was an unhandled exception while running the service {serviceEncoded}",
                         service);
-                    Console.WriteLine("***************");
-                    Console.WriteLine();
+                    System.Console.WriteLine("***************");
+                    System.Console.WriteLine();
                 }
             } while (!string.Equals("exit", input) && service != 0);
         }

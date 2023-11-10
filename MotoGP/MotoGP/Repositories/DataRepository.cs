@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using MotoGP.Api;
 using MotoGP.Configuration;
+using MotoGP.Console.Http;
 using MotoGP.Utilities;
 
 namespace MotoGP.Repositories;

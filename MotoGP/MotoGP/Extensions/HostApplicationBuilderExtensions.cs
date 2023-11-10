@@ -3,6 +3,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using MotoGP.Analyzer;
 using MotoGP.Configuration;
+using MotoGP.Http;
 using MotoGP.Data;
 using MotoGP.Repositories;
 using MotoGP.Scraper;

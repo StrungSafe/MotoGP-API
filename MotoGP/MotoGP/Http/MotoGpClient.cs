@@ -1,6 +1,6 @@
 ﻿using System.Net.Http.Json;
 
-namespace MotoGP
+namespace MotoGP.Http
 {
     public class MotoGpClient : HttpClient
     {

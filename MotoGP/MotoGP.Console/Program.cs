@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Hosting;
 using MotoGP.Extensions;
 
-namespace MotoGP
+namespace MotoGP.Console
 {
     public class Program
     {
